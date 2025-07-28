@@ -1,7 +1,7 @@
 [
   {
     "label": "Insights",
-    "icon": "/icons/insights.svg",
+    "icon": "https://cdn.prod.website-files.com/687ff76dab8436c342725018/6887f590f0e85ce8b302ff70_insights.svg",
     "badge": 0,
     "menuId": "100",
     "route": null,
@@ -10,47 +10,47 @@
   },
   {
     "label": "Users",
-    "icon": "/icons/users.svg",
+    "icon": "https://cdn.prod.website-files.com/687ff76dab8436c342725018/6887f5908efdd152dc38c388_users.svg",
     "badge": 0,
     "menuId": "200",
-    "route": "/users",
+    "route": null,
     "location": "leftBar",
     "sortOrder": 2
   },
   {
     "label": "Solutions",
-    "icon": "/icons/solutions.svg",
+    "icon": "https://cdn.prod.website-files.com/687ff76dab8436c342725018/6887f59001ddbadee0d18d3a_solutions.svg",
     "badge": 0,
     "menuId": "300",
-    "route": "/solutions",
+    "route": null,
     "location": "leftBar",
     "sortOrder": 3
   },
   {
     "label": "Reports",
-    "icon": "/icons/reports.svg",
+    "icon": "hhttps://cdn.prod.website-files.com/687ff76dab8436c342725018/6887f4f4393cc748619eda01_reports.svg",
     "badge": 3,
     "menuId": "400",
-    "route": "/reports",
+    "route": null,
     "location": "leftBar",
     "sortOrder": 4
   },
   {
     "label": "Sources",
-    "icon": "/icons/sources.svg",
+    "icon": "https://cdn.prod.website-files.com/687ff76dab8436c342725018/6887f590dda429785b4e0db2_sources.svg",
     "badge": 0,
     "menuId": "500",
-    "route": "/sources",
+    "route": null,
     "location": "leftBar",
     "sortOrder": 5
   }
 ,
   {
     "label": "Documents",
-    "icon": "/icons/documents.svg",
+    "icon": "https://cdn.prod.website-files.com/687ff76dab8436c342725018/6887f590ce7f0fe8be6d9262_documents.svg",
     "badge": 0,
-    "menuId": "0600",
-    "route": "/documents",
+    "menuId": "600",
+    "route": null,
     "location": "leftBar",
     "sortOrder": 6
   }
