@@ -1,83 +1,57 @@
 [
   {
-    "label": "Reports",
-    "icon": "/icons/reports.svg",
+    "label": "Insights",
+    "icon": "/icons/insights.svg",
     "badge": 0,
-    "menuId": "reports",
+    "menuId": "100",
     "route": null,
     "location": "leftBar",
-    "sortOrder": 4,
-    "subMenus": [
-      {
-        "label": "Report Writer",
-        "icon": "/icons/writer.svg",
-        "badge": 1,
-        "menuId": "5000",
-        "route": "/reports/writer",
-        "sortOrder": 1
-      },
-      {
-        "label": "Payroll Reports",
-        "icon": "/icons/payroll.svg",
-        "badge": 0,
-        "menuId": "3050",
-        "route": "/reports/payroll",
-        "sortOrder": 2
-      },
-      {
-        "label": "Personnel Reports",
-        "icon": "/icons/personnel.svg",
-        "badge": 0,
-        "menuId": "4567",
-        "route": "/reports/personnel",
-        "sortOrder": 3
-      }
-    ]
-  },
-  {
-    "label": "Connections",
-    "icon": "/icons/connections.svg",
-    "badge": 0,
-    "menuId": "504",
-    "route": "/connections",
-    "location": "leftBar",
-    "sortOrder": 5
-  },
-  {
-    "label": "Settings",
-    "icon": "/icons/settings.svg",
-    "badge": 0,
-    "menuId": "499",
-    "route": "/settings",
-    "location": "topBar",
     "sortOrder": 1
   },
   {
-    "label": "Documents",
-    "icon": "/icons/documents.svg",
-    "badge": 3,
-    "menuId": "588",
-    "route": "/documents",
-    "location": "topBar",
+    "label": "Users",
+    "icon": "/icons/users.svg",
+    "badge": 0,
+    "menuId": "200",
+    "route": "/users",
+    "location": "leftBar",
     "sortOrder": 2
   },
   {
-    "label": "Help",
-    "icon": "/icons/help.svg",
+    "label": "Solutions",
+    "icon": "/icons/solutions.svg",
     "badge": 0,
-    "menuId": "666",
-    "route": "/help",
-    "location": "topBar",
+    "menuId": "300",
+    "route": "/solutions",
+    "location": "leftBar",
     "sortOrder": 3
+  },
+  {
+    "label": "Reports",
+    "icon": "/icons/reports.svg",
+    "badge": 3,
+    "menuId": "400",
+    "route": "/reports",
+    "location": "leftBar",
+    "sortOrder": 4
+  },
+  {
+    "label": "Sources",
+    "icon": "/icons/sources.svg",
+    "badge": 0,
+    "menuId": "500",
+    "route": "/sources",
+    "location": "leftBar",
+    "sortOrder": 5
   }
 ,
   {
-    "label": "",
-    "icon": "/icons/brand.svg",
+    "label": "Documents",
+    "icon": "/icons/documents.svg",
     "badge": 0,
-    "menuId": "0",
-    "route": "/help",
-    "location": "brandCorner",
-    "sortOrder": 0
+    "menuId": "0600",
+    "route": "/documents",
+    "location": "leftBar",
+    "sortOrder": 6
   }
 ]
