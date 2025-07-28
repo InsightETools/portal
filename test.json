@@ -28,7 +28,7 @@
   },
   {
     "label": "Reports",
-    "icon": "hhttps://cdn.prod.website-files.com/687ff76dab8436c342725018/6887f4f4393cc748619eda01_reports.svg",
+    "icon": "https://cdn.prod.website-files.com/687ff76dab8436c342725018/6887f4f4393cc748619eda01_reports.svg",
     "badge": 3,
     "menuId": "400",
     "route": null,
