@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const dropdownTemplate = TEMPLATE.cloneNode(true);
   TEMPLATE.remove(); // Remove original template from DOM
 
-  fetch("https://corsproxy.io/?https://insightetoolsportal.netlify.app/test.json")
+  fetch("https://insightetoolsportal.netlify.app/test.json")
     .then(res => res.json())
     .then(data => {
       const grouped = { leftBar: [], topBar: [], brandCorner: [] };
