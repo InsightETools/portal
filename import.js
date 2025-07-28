@@ -8,7 +8,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const TEMPLATE = ZONES.leftBar.querySelector('[element="dropdown"]');
   if (!TEMPLATE) return;
 
-  fetch("https://insightetoolsportal.netlify.app/test.json")
+  // Clone before removing so we can reuse
+  const dropdownTemplate = TEMPLATE.cloneNode(true);
+  TEMPLATE.remove(); // Remove original template from DOM
+
+  fetch("https://corsproxy.io/?https://insightetoolsportal.netlify.app/test.json")
     .then(res => res.json())
     .then(data => {
       const grouped = { leftBar: [], topBar: [], brandCorner: [] };
@@ -21,10 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
         grouped[key].sort((a, b) => a.sortOrder - b.sortOrder);
       });
 
-      // Clear leftBar but keep 1 template
-      ZONES.leftBar.innerHTML = "";
-      ZONES.leftBar.appendChild(TEMPLATE);
-
       const createIcon = src => {
         const wrapper = document.createElement("div");
         wrapper.setAttribute("element", "icon");
@@ -34,14 +34,14 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       grouped.leftBar.forEach(item => {
-        const clone = TEMPLATE.cloneNode(true);
+        const clone = dropdownTemplate.cloneNode(true);
         const toggle = clone.querySelector('[element="toggle"]');
         const label = clone.querySelector('.menulabel');
         const link = toggle.querySelector('[element="link"]');
         const icon = toggle.querySelector('[element="icon"]');
 
         label.textContent = item.label || "Menu";
-        if (link && item.route) link.href = item.route;
+        if (link && item.route) link.href = item.route || "#";
         if (icon) icon.replaceWith(createIcon(item.icon));
 
         const submenuWrapper = clone.querySelector('[element="submenu"]');
