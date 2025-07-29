@@ -5,62 +5,61 @@ document.addEventListener("DOMContentLoaded", () => {
     brandCorner: document.querySelector('[zone="brandCorner"]')
   };
 
-  const TEMPLATE = ZONES.leftBar.querySelector('[element="dropdown"]');
+  const TEMPLATE = ZONES.leftBar.querySelector('[element="link"]');
   if (!TEMPLATE) return;
 
-  // Clone before removing so we can reuse
-  const dropdownTemplate = TEMPLATE.cloneNode(true);
-  TEMPLATE.remove(); // Remove original template from DOM
+  const menuTemplate = TEMPLATE.cloneNode(true);
+  TEMPLATE.remove();
 
-  fetch("https://insightetoolsportal.netlify.app/test.json")
+  fetch("https://corsproxy.io/?https://insightetoolsportal.netlify.app/test.json")
     .then(res => res.json())
     .then(data => {
       const grouped = { leftBar: [], topBar: [], brandCorner: [] };
-
       data.forEach(item => {
         if (grouped[item.location]) grouped[item.location].push(item);
       });
-
-      Object.keys(grouped).forEach(key => {
-        grouped[key].sort((a, b) => a.sortOrder - b.sortOrder);
-      });
+      Object.values(grouped).forEach(arr => arr.sort((a, b) => a.sortOrder - b.sortOrder));
 
       const createIcon = src => {
         const wrapper = document.createElement("div");
         wrapper.setAttribute("element", "icon");
         wrapper.className = "menuicon w-embed";
-        wrapper.innerHTML = `<img src="${src}" width="18" height="18" />`;
+        wrapper.innerHTML = `<img src="${src}" width="18" height="18">`;
         return wrapper;
       };
 
       grouped.leftBar.forEach(item => {
-        const clone = dropdownTemplate.cloneNode(true);
-        const toggle = clone.querySelector('[element="toggle"]');
+        const clone = menuTemplate.cloneNode(true);
         const label = clone.querySelector('.menulabel');
-        const link = toggle.querySelector('[element="link"]');
-        const icon = toggle.querySelector('[element="icon"]');
+        const icon = clone.querySelector('[element="icon"]');
+        const link = clone;
 
         label.textContent = item.label || "Menu";
-        if (link && item.route) link.href = item.route || "#";
+        link.href = item.route || "#";
         if (icon) icon.replaceWith(createIcon(item.icon));
 
         const submenuWrapper = clone.querySelector('[element="submenu"]');
-        const submenuList = submenuWrapper?.querySelector('.submenu');
-        const submenuHeader = submenuWrapper?.querySelector('.submenuheader');
+        const submenuZone = submenuWrapper?.querySelector('.submenuzone');
+        const submenuLabel = submenuWrapper?.querySelector('.submenulabel');
 
         if (Array.isArray(item.subMenus) && item.subMenus.length > 0) {
-          submenuList.innerHTML = "";
-          item.subMenus.sort((a, b) => a.sortOrder - b.sortOrder).forEach(sub => {
-            const subLink = document.createElement("a");
-            subLink.setAttribute("element", "link");
-            subLink.href = sub.route || "#";
-            subLink.className = "dropdown-link w-dropdown-link";
-            subLink.textContent = sub.label;
-            submenuList.appendChild(subLink);
+          submenuZone.innerHTML = "";
+          submenuLabel.textContent = item.label;
+
+          item.subMenus.forEach(sub => {
+            const subWrap = document.createElement("div");
+            subWrap.setAttribute("element", "link");
+            subWrap.className = "dropdown-link";
+
+            const p = document.createElement("p");
+            p.className = "paragraph";
+            p.textContent = sub.label;
+
+            subWrap.appendChild(p);
+            submenuZone.appendChild(subWrap);
           });
-          if (submenuHeader) submenuHeader.textContent = item.label;
         } else {
-          if (submenuWrapper) submenuWrapper.style.display = "none";
+          submenuWrapper.style.display = "none";
         }
 
         ZONES.leftBar.appendChild(clone);
@@ -72,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
         button.className = "headerbutton";
         button.innerHTML = `
           <div element="icon" class="headerbuttonicon w-embed">
-            <img src="${item.icon}" width="18" height="18" />
+            <img src="${item.icon}" width="18" height="18">
           </div>
           <div element="label" class="headerbuttonlabel">${item.label}</div>
         `;
@@ -84,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const link = document.createElement("a");
         link.href = item.route || "#";
         link.className = "logolink w-inline-block";
-        link.innerHTML = `<img src="${item.icon}" class="insight-logo" />`;
+        link.innerHTML = `<img src="${item.icon}" class="insight-logo">`;
         ZONES.brandCorner.appendChild(link);
       });
     })
