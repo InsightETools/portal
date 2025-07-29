@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuTemplate = TEMPLATE.cloneNode(true);
   TEMPLATE.remove();
 
-  fetch("https://https://insightetoolsportal.netlify.app/test.json")
+  fetch("https://insightetoolsportal.netlify.app/test.json")
     .then(res => res.json())
     .then(data => {
       const grouped = { leftBar: [], topBar: [], brandCorner: [] };
