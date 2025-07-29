@@ -6,7 +6,33 @@
     "menuId": "100",
     "route": null,
     "location": "leftBar",
-    "sortOrder": 1
+    "sortOrder": 1,
+    "subMenus": [
+      {
+        "label": "Report Writer",
+        "icon": "/icons/writer.svg",
+        "badge": 1,
+        "menuId": "5000",
+        "route": "/reports/writer",
+        "sortOrder": 1
+      },
+      {
+        "label": "Payroll Reports",
+        "icon": "/icons/payroll.svg",
+        "badge": 0,
+        "menuId": "3050",
+        "route": "/reports/payroll",
+        "sortOrder": 2
+      },
+      {
+        "label": "Personnel Reports",
+        "icon": "/icons/personnel.svg",
+        "badge": 0,
+        "menuId": "4567",
+        "route": "/reports/personnel",
+        "sortOrder": 3
+      }
+    ]
   },
   {
     "label": "Users",
@@ -15,7 +41,8 @@
     "menuId": "200",
     "route": null,
     "location": "leftBar",
-    "sortOrder": 2
+    "sortOrder": 2,
+    "subMenus": null
   },
   {
     "label": "Solutions",
@@ -25,6 +52,7 @@
     "route": null,
     "location": "leftBar",
     "sortOrder": 3
+    "subMenus": null
   },
   {
     "label": "Reports",
@@ -34,6 +62,7 @@
     "route": null,
     "location": "leftBar",
     "sortOrder": 4
+    "subMenus": null
   },
   {
     "label": "Sources",
@@ -43,6 +72,7 @@
     "route": null,
     "location": "leftBar",
     "sortOrder": 5
+    "subMenus": null
   }
 ,
   {
@@ -53,5 +83,6 @@
     "route": null,
     "location": "leftBar",
     "sortOrder": 6
+    "subMenus": null
   }
 ]
