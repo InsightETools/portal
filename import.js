@@ -39,14 +39,15 @@ document.addEventListener("DOMContentLoaded", () => {
         if (icon) icon.replaceWith(createIcon(item.icon));
 
         const submenuWrapper = clone.querySelector('[element="submenu"]');
+        const submenuHeader = submenuWrapper?.querySelector('.submenulabel');
         const submenuZone = submenuWrapper?.querySelector('.submenuzone');
-        const submenuLabel = submenuWrapper?.querySelector('.submenulabel');
 
         if (Array.isArray(item.subMenus) && item.subMenus.length > 0) {
+          submenuWrapper.style.display = "block";
+          submenuHeader.textContent = item.label;
           submenuZone.innerHTML = "";
-          submenuLabel.textContent = item.label;
 
-          item.subMenus.forEach(sub => {
+          item.subMenus.sort((a, b) => a.sortOrder - b.sortOrder).forEach(sub => {
             const subWrap = document.createElement("div");
             subWrap.setAttribute("element", "link");
             subWrap.className = "dropdown-link";
