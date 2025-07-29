@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const submenuZone = submenuWrapper?.querySelector('.submenuzone');
 
         if (Array.isArray(item.subMenus) && item.subMenus.length > 0) {
-          submenuWrapper.style.display = "block";
+          submenuWrapper.style.display = "none"; // default hidden
           submenuHeader.textContent = item.label;
           submenuZone.innerHTML = "";
 
@@ -59,6 +59,15 @@ document.addEventListener("DOMContentLoaded", () => {
             subWrap.appendChild(p);
             submenuZone.appendChild(subWrap);
           });
+
+          // Add hover behavior to reveal submenu
+          clone.addEventListener("mouseenter", () => {
+            submenuWrapper.style.display = "block";
+          });
+          clone.addEventListener("mouseleave", () => {
+            submenuWrapper.style.display = "none";
+          });
+
         } else {
           submenuWrapper.style.display = "none";
         }
