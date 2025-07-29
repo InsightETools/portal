@@ -51,7 +51,7 @@
     "menuId": "300",
     "route": null,
     "location": "leftBar",
-    "sortOrder": 3
+    "sortOrder": 3,
     "subMenus": null
   },
   {
@@ -61,7 +61,7 @@
     "menuId": "400",
     "route": null,
     "location": "leftBar",
-    "sortOrder": 4
+    "sortOrder": 4,
     "subMenus": null
   },
   {
@@ -71,10 +71,9 @@
     "menuId": "500",
     "route": null,
     "location": "leftBar",
-    "sortOrder": 5
+    "sortOrder": 5,
     "subMenus": null
-  }
-,
+  },
   {
     "label": "Documents",
     "icon": "https://cdn.prod.website-files.com/687ff76dab8436c342725018/6887f590ce7f0fe8be6d9262_documents.svg",
@@ -82,7 +81,7 @@
     "menuId": "600",
     "route": null,
     "location": "leftBar",
-    "sortOrder": 6
+    "sortOrder": 6,
     "subMenus": null
   }
 ]
