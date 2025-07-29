@@ -60,13 +60,16 @@ document.addEventListener("DOMContentLoaded", () => {
             submenuZone.appendChild(subWrap);
           });
 
-          // Add hover behavior to reveal submenu
-          clone.addEventListener("mouseenter", () => {
-            submenuWrapper.style.display = "block";
-          });
-          clone.addEventListener("mouseleave", () => {
-            submenuWrapper.style.display = "none";
-          });
+          // Show submenu when hovering over the anchor link
+          const anchorLink = clone.querySelector('.menuselect');
+          if (anchorLink) {
+            anchorLink.addEventListener("mouseenter", () => {
+              submenuWrapper.style.display = "block";
+            });
+            anchorLink.addEventListener("mouseleave", () => {
+              submenuWrapper.style.display = "none";
+            });
+          }
 
         } else {
           submenuWrapper.style.display = "none";
