@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
             anchorLink.addEventListener("mouseenter", () => {
               submenuWrapper.style.display = "block";
             });
-            anchorLink.addEventListener("mouseleave", () => {
+            submenuWrapper.addEventListener("mouseleave", () => {
               submenuWrapper.style.display = "none";
             });
           }
