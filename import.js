@@ -60,9 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
             submenuZone.appendChild(subWrap);
           });
 
-          const anchorLink = clone.querySelector('.menuselect w-inline-block');
+          const anchorLink = clone.querySelector('.menuselect');
           if (anchorLink) {
             anchorLink.addEventListener("mouseenter", () => {
+              console.log("Clicked");
               submenuWrapper.style.display = "block";
             });
             submenuWrapper.addEventListener("mouseleave", () => {
