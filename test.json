@@ -82,7 +82,7 @@
     "sortOrder": 4,
     "subMenus": [
       {
-        "label": null,
+        "label": "Reports Submenu",
         "icon": null,
         "badge": 1,
         "menuId": "5000",
