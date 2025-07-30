@@ -10,26 +10,26 @@
     "subMenus": [
       {
         "label": "Report Writer",
-        "icon": "/icons/writer.svg",
+        "icon": null,
         "badge": 1,
         "menuId": "5000",
-        "route": "/reports/writer",
+        "route": null,
         "sortOrder": 1
       },
       {
         "label": "Payroll Reports",
-        "icon": "/icons/payroll.svg",
+        "icon": null,
         "badge": 0,
         "menuId": "3050",
-        "route": "/reports/payroll",
+        "route": null,
         "sortOrder": 2
       },
       {
         "label": "Personnel Reports",
-        "icon": "/icons/personnel.svg",
+        "icon": null,
         "badge": 0,
         "menuId": "4567",
-        "route": "/reports/personnel",
+        "route": null,
         "sortOrder": 3
       }
     ]
@@ -45,10 +45,10 @@
     "subMenus": [
       {
         "label": "User Submenu",
-        "icon": "/icons/writer.svg",
+        "icon": null,
         "badge": 1,
         "menuId": "5000",
-        "route": "/reports/writer",
+        "route": null,
         "sortOrder": 1
       }
     ]
@@ -64,10 +64,10 @@
     "subMenus": [
       {
         "label": "Solutions Submenu",
-        "icon": "/icons/writer.svg",
+        "icon": null,
         "badge": 1,
         "menuId": "5000",
-        "route": "/reports/writer",
+        "route": null,
         "sortOrder": 1
       }
     ]
@@ -82,11 +82,11 @@
     "sortOrder": 4,
     "subMenus": [
       {
-        "label": "Reports Submenu",
-        "icon": "/icons/writer.svg",
+        "label": null,
+        "icon": null,
         "badge": 1,
         "menuId": "5000",
-        "route": "/reports/writer",
+        "route": null,
         "sortOrder": 1
       }
     ]
@@ -105,7 +105,7 @@
         "icon": "/icons/writer.svg",
         "badge": 1,
         "menuId": "5000",
-        "route": "/reports/writer",
+        "route": null,
         "sortOrder": 1
       }
     ]
@@ -121,10 +121,10 @@
     "subMenus": [
       {
         "label": "Documents Submenu",
-        "icon": "/icons/writer.svg",
+        "icon": null,
         "badge": 1,
         "menuId": "5000",
-        "route": "/reports/writer",
+        "route": null,
         "sortOrder": 1
       }
     ]
