@@ -60,8 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
             submenuZone.appendChild(subWrap);
           });
 
-          // Show submenu when hovering over the anchor link
-          const anchorLink = clone.querySelector('.menuselect');
+          const anchorLink = clone.querySelector('.menuselect w-inline-block');
           if (anchorLink) {
             anchorLink.addEventListener("mouseenter", () => {
               submenuWrapper.style.display = "block";
