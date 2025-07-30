@@ -97,13 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         link.className = "logolink w-inline-block";
         link.innerHTML = `<img src="${item.icon}" class="insight-logo">`;
         ZONES.brandCorner.appendChild(link);
-      });
-    })
-    .catch(err => console.error("Failed to load JSON:", err));
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleDiv = document.getElementById("editorSize");
+        const toggleDiv = document.getElementById("editorSize");
   const editorPanel = document.getElementById("editorPanel");
   const collapseMenu = document.getElementById("collapseMenu");
   const expandMenu = document.getElementById("expandMenu");
@@ -132,4 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
       settingsElement.classList.add("collapsed");
     }
   });
+      });
+    })
+    .catch(err => console.error("Failed to load JSON:", err));
 });
