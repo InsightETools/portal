@@ -60,15 +60,19 @@ document.addEventListener("DOMContentLoaded", () => {
             submenuZone.appendChild(subWrap);
           });
 
-          const anchorLink = clone.querySelector('.menuselect w-inline-block');
+          const anchorLink = clone.querySelector('.menuselect');
           if (anchorLink) {
-            anchorLink.addEventListener("mouseenter", () => {
-              console.log("Clicked");
-              submenuWrapper.style.display = "block";
-            });
-            submenuWrapper.addEventListener("mouseleave", () => {
-              submenuWrapper.style.display = "none";
-            });
+            // Wrap both hover in one shared container
+            const hoverArea = clone;
+
+          hoverArea.addEventListener("mouseenter", () => {
+          submenuWrapper.style.display = "block";
+          });
+
+          hoverArea.addEventListener("mouseleave", () => {
+          submenuWrapper.style.display = "none";
+          });
+          }
           }
 
         } else {
