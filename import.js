@@ -60,10 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
             submenuZone.appendChild(subWrap);
           });
 
-          const anchorLink = clone.querySelector('.menuselect');
-          console.log(clone);
-          if (anchorLink) {
-            const hoverArea = clone;
+          const hoverArea = clone;
 
           hoverArea.addEventListener("mouseenter", () => {
           submenuWrapper.style.display = "block";
@@ -72,11 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
           hoverArea.addEventListener("mouseleave", () => {
           submenuWrapper.style.display = "none";
           });
-          }
-
-        } else {
+          
           submenuWrapper.style.display = "none";
-        }
 
         ZONES.leftBar.appendChild(clone);
       });
