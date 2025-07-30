@@ -43,37 +43,40 @@ document.addEventListener("DOMContentLoaded", () => {
         const submenuZone = submenuWrapper?.querySelector('.submenuzone');
 
         if (Array.isArray(item.subMenus) && item.subMenus.length > 0) {
-          submenuWrapper.style.display = "none"; // default hidden
+          submenuWrapper.style.display = "none"; // Hide by default
           submenuHeader.textContent = item.label;
           submenuZone.innerHTML = "";
 
-          item.subMenus.sort((a, b) => a.sortOrder - b.sortOrder).forEach(sub => {
-            const subWrap = document.createElement("div");
-            subWrap.setAttribute("element", "link");
-            subWrap.className = "dropdown-link";
+          item.subMenus
+            .sort((a, b) => a.sortOrder - b.sortOrder)
+            .forEach(sub => {
+              const subWrap = document.createElement("div");
+              subWrap.setAttribute("element", "link");
+              subWrap.className = "dropdown-link";
 
-            const p = document.createElement("p");
-            p.className = "paragraph";
-            p.textContent = sub.label;
+              const p = document.createElement("p");
+              p.className = "paragraph";
+              p.textContent = sub.label;
 
-            subWrap.appendChild(p);
-            submenuZone.appendChild(subWrap);
+              subWrap.appendChild(p);
+              submenuZone.appendChild(subWrap);
+            });
+
+          // Hover to show/hide submenu
+          clone.addEventListener("mouseenter", () => {
+            submenuWrapper.style.display = "block";
           });
 
-          const hoverArea = clone;
-
-          hoverArea.addEventListener("mouseenter", () => {
-          submenuWrapper.style.display = "block";
+          clone.addEventListener("mouseleave", () => {
+            submenuWrapper.style.display = "none";
           });
-
-          hoverArea.addEventListener("mouseleave", () => {
+        } else {
           submenuWrapper.style.display = "none";
-          });
-          
-          submenuWrapper.style.display = "none";
+        }
 
+        // ✅ Append regardless of submenu
         ZONES.leftBar.appendChild(clone);
-      }
+      });
 
       grouped.topBar.forEach(item => {
         const button = document.createElement("div");
