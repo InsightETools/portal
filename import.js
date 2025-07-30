@@ -102,3 +102,33 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .catch(err => console.error("Failed to load JSON:", err));
 });
+
+const toggleDiv = document.getElementById("editorSize");
+  const editorPanel = document.getElementById("editorPanel");
+  const collapseMenu = document.getElementById("collapseMenu");
+  const expandMenu = document.getElementById("expandMenu");
+  const settingsElement = document.getElementById("settingsElement");
+  const textBlocks = document.querySelectorAll(".menulabel");
+  const submenuHeader = document.querySelectorAll(".submenuheader");
+  
+  expandMenu.style.display = "none";
+
+  if (!toggleDiv || !editorPanel || !collapseMenu || !expandMenu) return;
+
+  toggleDiv.addEventListener("click", () => {
+    const isCollapsed = editorPanel.classList.contains("collapsed");
+
+    if (isCollapsed) {
+      editorPanel.classList.remove("collapsed");
+      textBlocks.forEach(el => el.classList.remove("collapsed"));
+      collapseMenu.style.display = "block";
+      expandMenu.style.display = "none";
+      settingsElement.classList.remove("collapsed");
+    } else {
+      editorPanel.classList.add("collapsed");
+      textBlocks.forEach(el => el.classList.add("collapsed"));
+      collapseMenu.style.display = "none";
+      expandMenu.style.display = "block";
+      settingsElement.classList.add("collapsed");
+    }
+  });
