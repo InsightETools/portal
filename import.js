@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const wrapper = document.createElement("div");
         wrapper.setAttribute("element", "icon");
         wrapper.className = "menuicon w-embed";
-        wrapper.innerHTML = `<img src="${src}" width="18" height="18">`;
+        wrapper.innerHTML = <img src="${src}" width="18" height="18">;
         return wrapper;
       };
 
@@ -32,9 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const clone = menuTemplate.cloneNode(true);
         const label = clone.querySelector('.menulabel');
         const icon = clone.querySelector('[element="icon"]');
+        const link = clone;
 
         label.textContent = item.label || "Menu";
-        clone.href = item.route || "#";
+        link.href = item.route || "#";
         if (icon) icon.replaceWith(createIcon(item.icon));
 
         const submenuWrapper = clone.querySelector('[element="submenu"]');
@@ -42,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const submenuZone = submenuWrapper?.querySelector('.submenuzone');
 
         if (Array.isArray(item.subMenus) && item.subMenus.length > 0) {
-          submenuWrapper.style.display = "none";
+          submenuWrapper.style.display = "none"; // Hide by default
           submenuHeader.textContent = item.label;
           submenuZone.innerHTML = "";
 
@@ -72,6 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
           submenuWrapper.style.display = "none";
         }
 
+        // ✅ Append regardless of submenu
         ZONES.leftBar.appendChild(clone);
       });
 
@@ -79,12 +81,12 @@ document.addEventListener("DOMContentLoaded", () => {
         const button = document.createElement("div");
         button.setAttribute("element", "button");
         button.className = "headerbutton";
-        button.innerHTML = `
+        button.innerHTML = 
           <div element="icon" class="headerbuttonicon w-embed">
             <img src="${item.icon}" width="18" height="18">
           </div>
           <div element="label" class="headerbuttonlabel">${item.label}</div>
-        `;
+        ;
         if (item.menuId) button.id = item.menuId;
         ZONES.topBar.appendChild(button);
       });
@@ -93,40 +95,38 @@ document.addEventListener("DOMContentLoaded", () => {
         const link = document.createElement("a");
         link.href = item.route || "#";
         link.className = "logolink w-inline-block";
-        link.innerHTML = `<img src="${item.icon}" class="insight-logo">`;
+        link.innerHTML = <img src="${item.icon}" class="insight-logo">;
         ZONES.brandCorner.appendChild(link);
-      });
+        const toggleDiv = document.getElementById("editorSize");
+  const editorPanel = document.getElementById("editorPanel");
+  const collapseMenu = document.getElementById("collapseMenu");
+  const expandMenu = document.getElementById("expandMenu");
+  const settingsElement = document.getElementById("settingsElement");
+  const textBlocks = document.querySelectorAll(".menulabel");
+  const submenuHeader = document.querySelectorAll(".submenuheader");
+  
+  expandMenu.style.display = "none";
 
-      // ✅ MOVE collapse toggle logic HERE (after menu is built)
-      const toggleDiv = document.getElementById("editorSize");
-      const editorPanel = document.getElementById("editorPanel");
-      const collapseMenu = document.getElementById("collapseMenu");
-      const expandMenu = document.getElementById("expandMenu");
-      const settingsElement = document.getElementById("settingsElement");
+  if (!toggleDiv || !editorPanel || !collapseMenu || !expandMenu) return;
 
-      if (!toggleDiv || !editorPanel || !collapseMenu || !expandMenu || !settingsElement) return;
+  toggleDiv.addEventListener("click", () => {
+    const isCollapsed = editorPanel.classList.contains("collapsed");
 
+    if (isCollapsed) {
+      editorPanel.classList.remove("collapsed");
+      textBlocks.forEach(el => el.classList.remove("collapsed"));
+      collapseMenu.style.display = "block";
       expandMenu.style.display = "none";
-
-      toggleDiv.addEventListener("click", () => {
-        const isCollapsed = editorPanel.classList.contains("collapsed");
-        const textBlocks = document.querySelectorAll(".menulabel");
-
-        if (isCollapsed) {
-          editorPanel.classList.remove("collapsed");
-          textBlocks.forEach(el => el.classList.remove("collapsed"));
-          collapseMenu.style.display = "block";
-          expandMenu.style.display = "none";
-          settingsElement.classList.remove("collapsed");
-        } else {
-          editorPanel.classList.add("collapsed");
-          textBlocks.forEach(el => el.classList.add("collapsed"));
-          collapseMenu.style.display = "none";
-          expandMenu.style.display = "block";
-          settingsElement.classList.add("collapsed");
-        }
+      settingsElement.classList.remove("collapsed");
+    } else {
+      editorPanel.classList.add("collapsed");
+      textBlocks.forEach(el => el.classList.add("collapsed"));
+      collapseMenu.style.display = "none";
+      expandMenu.style.display = "block";
+      settingsElement.classList.add("collapsed");
+    }
+  });
       });
-
     })
     .catch(err => console.error("Failed to load JSON:", err));
 });
