@@ -61,6 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
           });
 
           const anchorLink = clone.querySelector('.menuselect');
+          console.log(anchorLink);
           if (anchorLink) {
             const hoverArea = clone;
 
