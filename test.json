@@ -42,7 +42,16 @@
     "route": null,
     "location": "leftBar",
     "sortOrder": 2,
-    "subMenus": null
+    "subMenus": [
+      {
+        "label": "User Submenu",
+        "icon": "/icons/writer.svg",
+        "badge": 1,
+        "menuId": "5000",
+        "route": "/reports/writer",
+        "sortOrder": 1
+      }
+    ]
   },
   {
     "label": "Solutions",
@@ -52,7 +61,16 @@
     "route": null,
     "location": "leftBar",
     "sortOrder": 3,
-    "subMenus": null
+    "subMenus": [
+      {
+        "label": "Solutions Submenu",
+        "icon": "/icons/writer.svg",
+        "badge": 1,
+        "menuId": "5000",
+        "route": "/reports/writer",
+        "sortOrder": 1
+      }
+    ]
   },
   {
     "label": "Reports",
@@ -62,7 +80,16 @@
     "route": null,
     "location": "leftBar",
     "sortOrder": 4,
-    "subMenus": null
+    "subMenus": [
+      {
+        "label": "Reports Submenu",
+        "icon": "/icons/writer.svg",
+        "badge": 1,
+        "menuId": "5000",
+        "route": "/reports/writer",
+        "sortOrder": 1
+      }
+    ]
   },
   {
     "label": "Sources",
@@ -72,7 +99,16 @@
     "route": null,
     "location": "leftBar",
     "sortOrder": 5,
-    "subMenus": null
+    "subMenus": [
+      {
+        "label": "Sources Submenu",
+        "icon": "/icons/writer.svg",
+        "badge": 1,
+        "menuId": "5000",
+        "route": "/reports/writer",
+        "sortOrder": 1
+      }
+    ]
   },
   {
     "label": "Documents",
@@ -82,6 +118,15 @@
     "route": null,
     "location": "leftBar",
     "sortOrder": 6,
-    "subMenus": null
+    "subMenus": [
+      {
+        "label": "Documents Submenu",
+        "icon": "/icons/writer.svg",
+        "badge": 1,
+        "menuId": "5000",
+        "route": "/reports/writer",
+        "sortOrder": 1
+      }
+    ]
   }
 ]
