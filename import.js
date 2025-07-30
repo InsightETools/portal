@@ -62,13 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
               submenuZone.appendChild(subWrap);
             });
 
-          // Hover to show/hide submenu
           clone.addEventListener("mouseenter", () => {
-            submenuWrapper.style.display = "block";
+            //submenuWrapper.style.display = "block";
           });
 
           clone.addEventListener("mouseleave", () => {
-            submenuWrapper.style.display = "none";
+            //submenuWrapper.style.display = "none";
           });
         } else {
           submenuWrapper.style.display = "none";
