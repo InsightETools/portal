@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
             submenuWrapper.style.display = "block";
           });
 
-          clone.addEventListener("mouseleave", () => {
+          clone.addEventListener("mouseout", () => {
             submenuWrapper.style.display = "none";
           });
         } else {
