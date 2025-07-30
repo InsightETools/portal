@@ -1,15 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const ZONES = {
+  const zones = {
     leftBar: document.querySelector('[zone="leftBar"]'),
     topBar: document.querySelector('[zone="topBar"]'),
     brandCorner: document.querySelector('[zone="brandCorner"]')
   };
 
-  const TEMPLATE = ZONES.leftBar.querySelector('[element="link"]');
-  if (!TEMPLATE) return;
+  const template = zones.leftBar.querySelector('[element="link"]');
+  if (!template) return;
 
-  const menuTemplate = TEMPLATE.cloneNode(true);
-  TEMPLATE.remove();
+  const menuTemplate = template.cloneNode(true);
+  template.remove();
 
   fetch("https://insightetoolsportal.netlify.app/test.json")
     .then(res => res.json())
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const submenuZone = submenuWrapper?.querySelector('.submenuzone');
 
         if (Array.isArray(item.subMenus) && item.subMenus.length > 0) {
-          submenuWrapper.style.display = "none"; // Hide by default
+          submenuWrapper.style.display = "none";
           submenuHeader.textContent = item.label;
           submenuZone.innerHTML = "";
 
@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
               submenuZone.appendChild(subWrap);
             });
 
-          // Hover to show/hide submenu
           clone.addEventListener("mouseover", () => {
             submenuWrapper.style.display = "block";
           });
@@ -74,8 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
           submenuWrapper.style.display = "none";
         }
 
-        // ✅ Append regardless of submenu
-        ZONES.leftBar.appendChild(clone);
+        zones.leftBar.appendChild(clone);
       });
 
       grouped.topBar.forEach(item => {
@@ -89,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <div element="label" class="headerbuttonlabel">${item.label}</div>
         `;
         if (item.menuId) button.id = item.menuId;
-        ZONES.topBar.appendChild(button);
+        zones.topBar.appendChild(button);
       });
 
       grouped.brandCorner.forEach(item => {
