@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
           const anchorLink = clone.querySelector('.menuselect');
           if (anchorLink) {
-            // Wrap both hover in one shared container
             const hoverArea = clone;
 
           hoverArea.addEventListener("mouseenter", () => {
@@ -72,7 +71,6 @@ document.addEventListener("DOMContentLoaded", () => {
           hoverArea.addEventListener("mouseleave", () => {
           submenuWrapper.style.display = "none";
           });
-          }
           }
 
         } else {
