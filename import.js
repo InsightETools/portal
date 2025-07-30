@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
           submenuWrapper.style.display = "none";
 
         ZONES.leftBar.appendChild(clone);
-      });
+      }
 
       grouped.topBar.forEach(item => {
         const button = document.createElement("div");
