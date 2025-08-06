@@ -44,7 +44,7 @@
     "sortOrder": 2,
     "subMenus": [
       {
-        "label": "John's Menu",
+        "label": "Users Submenu",
         "icon": null,
         "badge": 1,
         "menuId": "5000",
